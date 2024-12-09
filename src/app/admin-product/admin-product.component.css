@@ -1,0 +1,13 @@
+.container {
+    max-width: 900px;
+    margin: auto;
+  }
+  
+  thead {
+    background-color: #f8f9fa;
+  }
+  
+  .btn-sm {
+    padding: 5px 10px;
+  }
+  

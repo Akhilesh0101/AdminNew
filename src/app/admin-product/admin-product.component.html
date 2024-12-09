@@ -1,0 +1,39 @@
+<div class="container mt-4">
+  <h2 class="text-center">Product Management</h2>
+
+  <!-- Add Product Button -->
+  <div class="text-end mb-3">
+    <button class="btn btn-success" (click)="onAddProduct()">Add Product</button>
+  </div>
+
+  <!-- Product Table -->
+  <table class="table table-bordered table-striped text-center">
+    <thead class="thead-dark">
+      <tr>
+        <th>#</th>
+        <th>Product Name</th>
+        <th>Product Image</th>
+        <th>Product Description</th>
+
+        <th>Price</th>
+        <th>Category Id</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let product of products; let i = index">
+        <td>{{ i + 1 }}</td>
+        <td>{{ product.ProductName }}</td>  <!-- Correct casing -->
+        <td><img src="{{product.Productimg }}" width="100" height="100"></td>   <!-- Correct casing -->
+        <td>{{product.Description}}</td>
+        <td><span>₹</span>{{ product.Price }}</td>  
+        <td>{{product.CategoryId}}</td>
+              <!-- Correct casing -->
+        <td>
+          <button class="btn btn-primary btn-sm me-2" (click)="onEditProduct(product)">Edit</button>
+          <button class="btn btn-danger btn-sm" (click)="onDeleteProduct(product.ProductId)">Delete</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
